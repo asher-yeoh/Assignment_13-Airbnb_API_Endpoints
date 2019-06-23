@@ -4,99 +4,109 @@ package com.example.airbnb.entities;
  * AirbnbProperty
  */
 public class AirbnbProperty {
-	
-	String propertyName;
-	String propertyImageUrl;
-	int guestNum;
-	int privateBedroomNum;
-	int bedNum;
-	int privateBathNum;
-	String propertyDescription;
-	String hostImageUrl;
-	String hostName;
+    
+    Property[] properties;
+    GuestSuite[] guestSuites;
+    Amenity[] amenities;
+    Accessibility[] accessibilities;
+    Location[] locations;
+    Review[] reviews;
+    Host[] hosts;
+    CancellationPolicyHouseRule[] cancellationPolicyHouseRules;
+    OtherHighlyRatedHome[] otherHighlyRatedHomes;
+    ThingsToDo[] thingsToDos;
 
-	public AirbnbProperty(String propertyName, String propertyImageUrl, int guestNum, int privateBedroomNum, int bedNum, int privateBathNum, String propertyDescription, String hostImageUrl, String hostName) {
-		this.propertyName = propertyName;
-		this.propertyImageUrl = propertyImageUrl;
-		this.guestNum = guestNum;
-		this.privateBedroomNum = privateBedroomNum;
-		this.bedNum = bedNum;
-		this.privateBathNum = privateBathNum;
-		this.propertyDescription = propertyDescription;
-		this.hostImageUrl = hostImageUrl;
-		this.hostName = hostName;
-	}
+    public AirbnbProperty(Property[] properties, GuestSuite[] guestSuites, Amenity[] amenites, Accessibility[] accessibilities, Location[] locations, Review[] reviews, Host[] hosts, CancellationPolicyHouseRule[] cancellationPolicyHouseRules, OtherHighlyRatedHome[] otherHighlyRatedHomes, ThingsToDo[] thingsToDos) {
+        this.properties = properties;
+        this.guestSuites = guestSuites;
+        this.amenities = amenites;
+        this.accessibilities = accessibilities;
+        this.locations = locations;
+        this.reviews = reviews;
+        this.hosts = hosts;
+        this.cancellationPolicyHouseRules = cancellationPolicyHouseRules;
+        this.otherHighlyRatedHomes = otherHighlyRatedHomes;
+        this.thingsToDos = thingsToDos;
+    }
 
-	public String getPropertyName() {
-		return this.propertyName;
-	}
+    public Property[] getProperties() {
+        return this.properties;
+    }
 
-	public void setPropertyName(String propertyName) {
-		this.propertyName = propertyName;
-	}
+    public void setProperties(Property[] properties) {
+        this.properties = properties;
+    }
 
-	public String getPropertyImageUrl() {
-		return this.propertyImageUrl;
-	}
+    public GuestSuite[] getGuestSuites() {
+        return this.guestSuites;
+    }
 
-	public void setPropertyImageUrl(String propertyImageUrl) {
-		this.propertyImageUrl = propertyImageUrl;
-	}
+    public void setGuestSuites(GuestSuite[] guestSuites) {
+        this.guestSuites = guestSuites;
+    }
 
-	public int getGuestNum() {
-		return this.guestNum;
-	}
+    public Amenity[] getAmenites() {
+        return this.amenities;
+    }
 
-	public void setGuestNum(int guestNum) {
-		this.guestNum = guestNum;
-	}
+    public void setAmenites(Amenity[] amenites) {
+        this.amenities = amenites;
+    }
 
-	public int getPrivateBedroomNum() {
-		return this.privateBedroomNum;
-	}
+    public Accessibility[] getAccessibilities() {
+        return this.accessibilities;
+    }
 
-	public void setPrivateBedroomNum(int privateBedroomNum) {
-		this.privateBedroomNum = privateBedroomNum;
-	}
+    public void setAccessibilities(Accessibility[] accessibilities) {
+        this.accessibilities = accessibilities;
+    }
 
-	public int getBedNum() {
-		return this.bedNum;
-	}
+    public Location[] getLocations() {
+        return this.locations;
+    }
 
-	public void setBedNum(int bedNum) {
-		this.bedNum = bedNum;
-	}
+    public void setLocations(Location[] locations) {
+        this.locations = locations;
+    }
 
-	public int getPrivateBathNum() {
-		return this.privateBathNum;
-	}
+    public Review[] getReviews() {
+        return this.reviews;
+    }
 
-	public void setPrivateBathNum(int privateBathNum) {
-		this.privateBathNum = privateBathNum;
-	}
+    public void setReviews(Review[] reviews) {
+        this.reviews = reviews;
+    }
 
-	public String getPropertyDescription() {
-		return this.propertyDescription;
-	}
+    public Host[] getHosts() {
+        return this.hosts;
+    }
 
-	public void setPropertyDescription(String propertyDescription) {
-		this.propertyDescription = propertyDescription;
-	}
+    public void setHosts(Host[] hosts) {
+        this.hosts = hosts;
+    }
 
-	public String getHostImageUrl() {
-		return this.hostImageUrl;
-	}
+    public CancellationPolicyHouseRule[] getCancellationPolicyHouseRules() {
+        return this.cancellationPolicyHouseRules;
+    }
 
-	public void setHostImageUrl(String hostImageUrl) {
-		this.hostImageUrl = hostImageUrl;
-	}
+    public void setCancellationPolicyHouseRules(CancellationPolicyHouseRule[] cancellationPolicyHouseRules) {
+        this.cancellationPolicyHouseRules = cancellationPolicyHouseRules;
+    }
 
-	public String getHostName() {
-		return this.hostName;
-	}
+    public OtherHighlyRatedHome[] getOtherHighlyRatedHomes() {
+        return this.otherHighlyRatedHomes;
+    }
 
-	public void setHostName(String hostName) {
-		this.hostName = hostName;
-	}
+    public void setOtherHighlyRatedHomes(OtherHighlyRatedHome[] otherHighlyRatedHomes) {
+        this.otherHighlyRatedHomes = otherHighlyRatedHomes;
+    }
+
+    public ThingsToDo[] getThingsToDos() {
+        return this.thingsToDos;
+    }
+
+    public void setThingsToDos(ThingsToDo[] thingsToDos) {
+        this.thingsToDos = thingsToDos;
+    }
 
 }

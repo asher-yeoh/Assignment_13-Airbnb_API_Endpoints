@@ -10,8 +10,10 @@ import com.example.airbnb.entities.Amenity;
 import com.example.airbnb.entities.CancellationPolicyHouseRule;
 import com.example.airbnb.entities.GuestSuite;
 import com.example.airbnb.entities.Host;
+import com.example.airbnb.entities.Language;
 import com.example.airbnb.entities.Location;
 import com.example.airbnb.entities.OtherHighlyRatedHome;
+import com.example.airbnb.entities.Property;
 import com.example.airbnb.entities.Review;
 import com.example.airbnb.entities.ThingsToDo;
 
@@ -20,10 +22,10 @@ import com.example.airbnb.entities.ThingsToDo;
 public class ApiController {
 
     @GetMapping(value="/property", produces="application/json")
-    public AirbnbProperty[] displayProperty() {
+    public AirbnbProperty[] displayAirbnbProperty() {
 
-        AirbnbProperty[] properties = {
-            new AirbnbProperty(
+        Property[] properties = {
+            new Property(
                 "Chic Room with Bath and Kitchenette Living Area",
                 "https://a0.muscache.com/4ea/air/v2/pictures/d5e090ac-b2b6-4f9e-a578-3d9405c8477f.jpg?t=r:w2500-h1500-sfit,e:fjpg-c90",
                 3,
@@ -35,12 +37,6 @@ public class ApiController {
                 "Nicholas & Michele"
             ),
         };
-
-        return properties;
-    }
-
-    @GetMapping(value="/property/tour_this_guest_suite", produces="application/json")
-    public GuestSuite[] displayGuestSuite() {
 
         GuestSuite[] guestSuites = {
             new GuestSuite(
@@ -65,35 +61,17 @@ public class ApiController {
             ),
         };
 
-        return guestSuites;
-    }
-
-    @GetMapping(value="/property/amenities", produces="application/json")
-    public Amenity[] displayAmenity() {
-
         Amenity[] amenities = {
             new Amenity(
                 true, true, true, true, true, true, true, true, true, true, true, true, false, false, false
             ),
         };
 
-        return amenities;
-    }
-
-    @GetMapping(value="/property/accessibility", produces="application/json")
-    public Accessibility[] displayAccessibility() {
-
-        Accessibility[] accessibiliies = {
+        Accessibility[] accessibilities = {
             new Accessibility(
                 "Flat path to guest entrance"
             ),
         };
-
-        return accessibiliies;
-    }
-
-    @GetMapping(value="/property/location", produces="application/json")
-    public Location[] displayLocation() {
 
         Location[] locations = {
             new Location(
@@ -104,12 +82,6 @@ public class ApiController {
                 "44 mins by car"
             ),
         };
-
-        return locations;
-    }
-
-    @GetMapping(value="/property/reviews", produces="application/json")
-    public Review[] displayReview() {
 
         Review[] reviews = {
             new Review(
@@ -144,13 +116,11 @@ public class ApiController {
             ),
         };
 
-        return reviews;
-    }
-
-    @GetMapping(value="/property/meet_your_host", produces="application/json")
-    public Host[] displayhost() {
-
-        String[] languages = {"English", "Deutsch"};
+        Language[] languages = {
+            new Language (
+                false, true, true, false, false
+            ),
+        };
 
         Host[] hosts = {
             new Host(
@@ -165,24 +135,12 @@ public class ApiController {
             ),
         };
 
-        return hosts;
-    }
-
-    @GetMapping(value="/property/cancellation_policy_and_house_rules", produces="application/json")
-    public CancellationPolicyHouseRule[] displayCancellationPolicyHouseRule() {
-
         CancellationPolicyHouseRule[] cancellationPolicyHouseRules = {
             new CancellationPolicyHouseRule(
                 "Moderate",
                 "Cancel within 48 hours of booking"
             ),
         };
-
-        return cancellationPolicyHouseRules;
-    }
-
-    @GetMapping(value="/property/other_highly_rated_homes", produces="application/json")
-    public OtherHighlyRatedHome[] displayOtherHighlyRatedHome() {
 
         OtherHighlyRatedHome[] otherHighlyRatedHomes = {
             new OtherHighlyRatedHome(
@@ -223,16 +181,29 @@ public class ApiController {
             ),
         };
 
-        return otherHighlyRatedHomes;
-    }
+        Language[] languages01 = {
+            new Language (
+                false, false, false, false, false
+            ),
+        };
 
-    @GetMapping(value="/property/things_to_do_near_this_home", produces="application/json")
-    public ThingsToDo[] displayThingsToDo() {
+        Language[] languages02 = {
+            new Language (
+                true, false, false, false, false
+            ),
+        };
 
-        String[] languages01 = {""};
-        String[] languages02 = {"All"};
-        String[] languages03 = {"Spanish"};
-        String[] languages04 = {"French"};
+        Language[] languages03 = {
+            new Language (
+                false, false, false, true, false
+            ),
+        };
+
+        Language[] languages04 = {
+            new Language (
+                false, false, false, false, true
+            ),
+        };
 
         ThingsToDo[] thingsToDos = {
             new ThingsToDo(
@@ -457,6 +428,20 @@ public class ApiController {
             ),
         };
 
-        return thingsToDos;
+        AirbnbProperty[] airbnbProperties = {
+            new AirbnbProperty (
+                properties,
+                guestSuites,
+                amenities,
+                accessibilities,
+                locations,
+                reviews,
+                hosts,
+                cancellationPolicyHouseRules,
+                otherHighlyRatedHomes,
+                thingsToDos
+            ),
+        };
+        return airbnbProperties;
     }
 }

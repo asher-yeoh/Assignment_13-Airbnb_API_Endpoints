@@ -17,9 +17,9 @@ public class ThingsToDo {
 	boolean isTicket;
 	double ratingStars;
 	int reviewsCount;
-	String[] languages;
+	Language[] languages;
 
-	public ThingsToDo(String activityImageUrl, String activityCategory, String activityDescription, int pricePerPerson, double durationInHours, boolean isTransportation, boolean isFood, boolean isDrinks, boolean isEquipment, boolean isTicket, double ratingStars, int reviewsCount, String[] languages) {
+	public ThingsToDo(String activityImageUrl, String activityCategory, String activityDescription, int pricePerPerson, double durationInHours, boolean isTransportation, boolean isFood, boolean isDrinks, boolean isEquipment, boolean isTicket, double ratingStars, int reviewsCount, Language[] languages) {
 		this.activityImageUrl = activityImageUrl;
 		this.activityCategory = activityCategory;
 		this.activityDescription = activityDescription;
@@ -151,12 +151,12 @@ public class ThingsToDo {
 		this.reviewsCount = reviewsCount;
 	}
 
-	public String[] getLanguages() {
+	public Language[] getLanguages() {
 		return this.languages;
 	}
 
-	public void setLanguages(String[] languages) {
+	public void setLanguages(Language[] languages) {
 		this.languages = languages;
 	}
-	
+
 }

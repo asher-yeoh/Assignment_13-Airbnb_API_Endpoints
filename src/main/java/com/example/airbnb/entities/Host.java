@@ -10,11 +10,11 @@ public class Host {
 	boolean isOnProperty;
 	boolean isAvailability;
 	String joinDate;
-	String[] languages;
+	Language[] languages;
 	int responseRate;
 	String responseTime;
 
-	public Host(String hostImageUrl, String hostName, String bio, boolean isOnProperty, boolean isAvailability, String joinDate, String[] languages, int responseRate, String responseTime) {
+	public Host(String hostImageUrl, String hostName, String bio, boolean isOnProperty, boolean isAvailability, String joinDate, Language[] languages, int responseRate, String responseTime) {
 		this.hostImageUrl = hostImageUrl;
 		this.hostName = hostName;
 		this.bio = bio;
@@ -82,11 +82,11 @@ public class Host {
 		this.joinDate = joinDate;
 	}
 
-	public String[] getLanguages() {
+	public Language[] getLanguages() {
 		return this.languages;
 	}
 
-	public void setLanguages(String[] languages) {
+	public void setLanguages(Language[] languages) {
 		this.languages = languages;
 	}
 
